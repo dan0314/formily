@@ -24,6 +24,7 @@ export interface IFormItemProps {
   tooltipLayout?: 'icon' | 'text'
   labelStyle?: React.CSSProperties
   labelAlign?: 'left' | 'right'
+  labelFor?: string
   labelWrap?: boolean
   labelWidth?: number | string
   wrapperWidth?: number | string
@@ -228,6 +229,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
         <span ref={contentRef}>
           {asterisk && <span className={`${prefixCls}-asterisk`}>{'*'}</span>}
           <label>{label}</label>
+          <label htmlFor={props.labelFor}>{label}</label>
         </span>
       </div>
     )
